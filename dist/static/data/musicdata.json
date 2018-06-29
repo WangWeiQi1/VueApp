@@ -1,0 +1,39 @@
+{
+  "musicData": [{
+    "title": "春娇与志明",
+    "artist": "街道办&欧阳耀莹",
+    "src": "http://www.ytmp3.cn/?down/44253.mp3",
+    "pic": "https://y.gtimg.cn/music/photo_new/T002R300x300M000000lrXyA0MlEEo.jpg?max_age=2592000",
+    "lrc": "lrc/春娇与志明.lrc"
+  }, {
+    "title": "成都",
+    "artist": "赵雷",
+    "src": "http://up.mcyt.net/down/40586.mp3",
+    "pic": "http://p4.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.jpg",
+    "lrc": "lrc/成都-赵雷.lrc"
+  }, {
+    "title": "起风了",
+    "artist": "买辣椒也用券",
+    "src": "http://www.ytmp3.cn/?down/45963.mp3",
+    "pic": "https://y.gtimg.cn/music/photo_new/T002R300x300M000003j3NMw1ZBpsv.jpg?max_age=2592000",
+    "lrc": "lrc/起风了.lrc"
+  }, {
+    "title": "烟花易冷",
+    "artist": "周杰伦",
+    "src": "http://www.ytmp3.cn/?down/32658.mp3",
+    "pic": "https://y.gtimg.cn/music/photo_new/T002R300x300M000000bviBl4FjTpO.jpg?max_age=2592000",
+    "lrc": "lrc/烟花易冷.lrc"
+  }, {
+    "title": "那些花儿",
+    "artist": "朴树",
+    "src": "http://www.ytmp3.cn/?down/41842.mp3",
+    "pic": "https://y.gtimg.cn/music/photo_new/T002R300x300M000001TvSSG4KBqIE.jpg?max_age=2592000",
+    "lrc": "lrc/那些花儿.lrc"
+  }, {
+    "title": "凉城",
+    "artist": "任然",
+    "src": "http://www.ytmp3.cn/?down/40816.mp3",
+    "pic": "https://y.gtimg.cn/music/photo_new/T002R300x300M0000008nl2Y1HlxUm.jpg?max_age=2592000",
+    "lrc": "lrc/凉城.lrc"
+  }]
+}
