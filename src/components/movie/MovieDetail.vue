@@ -18,7 +18,7 @@
     </div>
     <div>
       <h3>简介</h3>
-      <div class="dra" v-html="detail.dra"></div>
+      <div v-html="detail.dra"></div>
     </div>
     <div class="loading" v-show="isLoading">
       <img src="../../assets/img/123.gif" alt="">
@@ -36,16 +36,10 @@
         }
       },
       created(){
-//          axios.get(`${API_PROXY}http://m.maoyan.com/movie/${this.$route.params.movieId}.json`).then(res=>{
-        axios.get(`${API_PROXY}http://m.maoyan.com/ajax/detailmovie?movieId=${this.$route.params.movieId}`).then(res=>{
-
-              console.log(res.data.detailMovie);
-             this.detail = res.data.detailMovie;
-             const list = res.data.detailMovie;
-             list.img = list.img.replace('w.h','128.180');
-             console.log('list.img:',list.img);
-
-          this.isLoading = false;
+          axios.get(`${API_PROXY}http://m.maoyan.com/movie/${this.$route.params.movieId}.json`).then(res=>{
+//              console.log(res);
+             this.detail = res.data.data.MovieDetailModel;
+             this.isLoading = false;
           }).catch(res=>{
               alert('failed');
           });
@@ -80,8 +74,6 @@
   }
   .detail-star{
     border-bottom:1px solid #ccc;
-    text-align: center;
-    margin:.1rem 0;
   }
   .loading{
     text-align: center;
@@ -89,8 +81,5 @@
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-  }
-  .dra{
-    margin-bottom:1rem;
   }
 </style>

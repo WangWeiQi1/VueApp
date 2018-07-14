@@ -2,12 +2,12 @@
   <ul class="footer" :style="{background:bgColor}">
       <!--<li><router-link @click.native="clickHandler({bgColor:'rgb(33,150,243)',title:'Movie'})" to="/">电影</router-link></li>-->
       <!--<li><router-link @click.native="clickHandler({bgColor:'rgb(0,150,136)',title:'Music'})" to="/music">音乐</router-link></li>-->
-      <!--<li><router-link @click.native="clickHandler({bgColor:'rgb(121,85,72)',title:'Book'})" tnewsbook">新闻</router-link></li>-->
-      <!--<li><router-link @click.native="clickHandler({bgColor:'rgb(63,81,180)',title:'Photo'})" tdaunzihoto">段子</router-link></li>-->
+      <!--<li><router-link @click.native="clickHandler({bgColor:'rgb(121,85,72)',title:'Book'})" tnewsbook">书籍</router-link></li>-->
+      <!--<li><router-link @click.native="clickHandler({bgColor:'rgb(63,81,180)',title:'Photo'})" tjokeshoto">图片</router-link></li>-->
     <li><router-link @click.native="$emit('change','影视推荐')" to="/">电影</router-link></li>
     <li><router-link @click.native="$emit('change','音乐鉴赏')" to="/music">音乐</router-link></li>
     <li><router-link @click.native="$emit('change','娱乐新闻')" to="/news">新闻</router-link></li>
-    <li><router-link @click.native="$emit('change','内涵段子')" to="/photo">段子</router-link></li>
+    <li><router-link @click.native="$emit('change','内涵段子')" to="/jokes">段子</router-link></li>
 </ul>
 </template>
 

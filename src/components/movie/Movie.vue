@@ -13,14 +13,13 @@
       <li @click="getDetail(movie.id)" class="movie" v-for="movie in movieList" :key="movie.id">
         <div class="movie-img">
           <img :src="movie.img" alt="">
-          <!--<img src="https://p0.meituan.net/128.180/movie/238e2dc36beae55a71cabfc14069fe78236351.jpg" alt="">-->
         </div>
         <div class="movie-info">
           <p class="movie-name">{{movie.nm}}</p>
           <p class="ping">评分</p>
           <p class="fen">{{movie.sc}}</p>
-          <p class="star">主演:{{movie.star}}</p>
-          <!--<p>上映时间:{{movie.rt}}</p>-->
+          <p>{{movie.ver}}</p>
+          <p>主演:{{movie.star}}</p>
           <p>{{movie.showInfo}}</p>
         </div>
       </li>
@@ -54,25 +53,15 @@
     },
     methods:{
       getMovieData(){
-//        axios.get(API_PROXY+`http://m.maoyan.com/movie/list.json?type=hot&offset=${this.movieList.length}&limit=10`).
-        axios.get(API_PROXY+`http://m.maoyan.com/ajax/movieOnInfoList`).
+        axios.get(API_PROXY+`http://m.maoyan.com/movie/list.json?type=hot&offset=${this.movieList.length}&limit=10`).
         then(res=>{
-            console.log(res.data.movieList);
-//            this.movieList = res.data.movieList;
-            const lista = res.data.movieList;
-            lista.map(e => {
-                //map用于对数组遍历
-                return e.img = e.img.replace('w.h', '128.180');
-            })
-            this.movieList = lista;
-
-//            console.log('lista', lista)
-
-//            let list = res.data.movieList;
-          if(lista.length<10){
+            console.log(res.data.data.movies.length);
+            console.log(res.data);
+          let list = res.data.data.movies;
+          if(list.length<10){
               this.isEnd = true;
           }
-//          this.movieList = this.movieList.concat(list);
+          this.movieList = this.movieList.concat(list);
           this.isLoading = false;
         }).catch(res=>{
           alert('failed');
@@ -94,18 +83,13 @@
           if(scrollTop+clientHeight == scrollHeight && !this.isEnd){
               this.isLoading = true;
               setTimeout(()=>{
-//                this.getMovieData();
-                if(this.movieList.length>=12){
-                    this.isLoading = false;
-                    this.isEnd = true;
-                }
+                this.getMovieData();
               },1000);
 
           }
         }
     }
   }
-
 </script>
 
 <style scoped>
@@ -148,9 +132,6 @@
   .fen{
     font-size:25px;
     color:#ffc600;
-  }
-  .star{
-    margin-bottom:.1rem;
   }
 
 </style>
