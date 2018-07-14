@@ -97,35 +97,6 @@
   .wwqmusic{
     padding:5px 0;
   }
-  .wwqmusic .aplayer{
-    /*overflow: visible;*/
-  }
-  .wwqmusic /deep/ .aplayer.aplayer-withlrc .aplayer-body .aplayer-pic{
-    width: 140px;
-    height: 140px;
-  }
-  .wwqmusic /deep/ .aplayer.aplayer-withlrc .aplayer-body .aplayer-info{
-    height: 140px;
-  }
-  .wwqmusic /deep/ .aplayer .aplayer-body .aplayer-info .aplayer-music .aplayer-title{
-    font-size:25px;
-  }
-  .wwqmusic /deep/ .aplayer .aplayer-body .aplayer-info .aplayer-music .aplayer-author{
-    font-size:15px;
-    padding-left:4px;
-  }
-  .wwqmusic /deep/ .aplayer-list ol li{
-    font-size: 16px;
-    padding-bottom:10px;
-    padding-top:5px;
-    /*overflow: inherit;*/
 
-  }
-  .wwqmusic /deep/ .aplayer-list ol{
-    margin-top:5px;
-    /*overflow: inherit;*/
-
-    /*padding-bottom:20px;*/
-  }
 </style>
 
