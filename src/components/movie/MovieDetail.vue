@@ -27,30 +27,30 @@
 </template>
 
 <script>
-    import axios from 'axios';
-    export default{
-        data(){
-            return {
-                detail:[],
-                isLoading:true
-            }
-        },
-        created(){
-//          axios.get(`${API_PROXY}http://m.maoyan.com/movie/${this.$route.params.movieId}.json`).then(res=>{
-            axios.get(`${API_PROXY}http://m.maoyan.com/ajax/detailmovie?movieId=${this.$route.params.movieId}`).then(res=>{
-
-                console.log(res.data.detailMovie);
-                this.detail = res.data.detailMovie;
-                const list = res.data.detailMovie;
-                list.img = list.img.replace('w.h','128.180');
-                console.log('list.img:',list.img);
-
-                this.isLoading = false;
-            }).catch(res=>{
-                alert('failed');
-            });
+  import axios from 'axios';
+  export default{
+      data(){
+        return {
+            detail:[],
+            isLoading:true
         }
-    }
+      },
+      created(){
+//          axios.get(`${API_PROXY}http://m.maoyan.com/movie/${this.$route.params.movieId}.json`).then(res=>{
+        axios.get(`${API_PROXY}http://m.maoyan.com/ajax/detailmovie?movieId=${this.$route.params.movieId}`).then(res=>{
+
+              console.log(res.data.detailMovie);
+             this.detail = res.data.detailMovie;
+             const list = res.data.detailMovie;
+             list.img = list.img.replace('w.h','128.180');
+             console.log('list.img:',list.img);
+
+          this.isLoading = false;
+          }).catch(res=>{
+              alert('failed');
+          });
+      }
+  }
 </script>
 
 <style scoped>

@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Movie from '@/components/movie/Movie'
 import Music from '@/components/music/Music'
 import News from '@/components/news/News'
-import Jokes from '@/components/jokes/Jokes'
+import Photo from '@/components/photo/Photo'
 import MovieDetail from '@/components/movie/MovieDetail'
 import MusicAlbums from '@/components/music/MusicAlbums'
 
@@ -36,9 +36,9 @@ export default new Router({
         from.name === null ? next('/') : next();
       }
     },{
-      path: '/jokes',
-      name:'Jokes',
-      component: Jokes,
+      path: '/photo',
+      name:'Photo',
+      component: Photo,
       beforeEnter(to,from,next){
         from.name === null ? next('/') : next();
       }

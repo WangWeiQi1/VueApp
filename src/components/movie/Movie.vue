@@ -1,12 +1,12 @@
 <template>
   <!--<div>-->
-  <!--&lt;!&ndash;<common-header bgColor="rgb(33,150,243)">&ndash;&gt;-->
-  <!--&lt;!&ndash;<span slot="title">Movie</span>&ndash;&gt;-->
-  <!--&lt;!&ndash;</common-header>&ndash;&gt;-->
+    <!--&lt;!&ndash;<common-header bgColor="rgb(33,150,243)">&ndash;&gt;-->
+      <!--&lt;!&ndash;<span slot="title">Movie</span>&ndash;&gt;-->
+    <!--&lt;!&ndash;</common-header>&ndash;&gt;-->
 
-  <!--&lt;!&ndash;<common-footer bgColor="rgb(33,150,243)">&ndash;&gt;-->
+    <!--&lt;!&ndash;<common-footer bgColor="rgb(33,150,243)">&ndash;&gt;-->
 
-  <!--&lt;!&ndash;</common-footer>&ndash;&gt;-->
+    <!--&lt;!&ndash;</common-footer>&ndash;&gt;-->
   <!--</div>-->
   <div>
     <ul class="list">
@@ -37,74 +37,74 @@
 </template>
 
 <script>
-    //  import CommonHeader from '@/components/common/Header'
-    //  import CommonFooter from '@/components/common/Footer'
-    import axios from 'axios'
-    export default{
+//  import CommonHeader from '@/components/common/Header'
+//  import CommonFooter from '@/components/common/Footer'
+  import axios from 'axios'
+  export default{
 //    components:{
 //      CommonHeader,
 //      CommonFooter
 //    }
-        data(){
-            return {
-                movieList:[],
-                isLoading:true,
-                isEnd:false
-            }
-        },
-        methods:{
-            getMovieData(){
+    data(){
+      return {
+          movieList:[],
+          isLoading:true,
+          isEnd:false
+      }
+    },
+    methods:{
+      getMovieData(){
 //        axios.get(API_PROXY+`http://m.maoyan.com/movie/list.json?type=hot&offset=${this.movieList.length}&limit=10`).
-                axios.get(API_PROXY+`http://m.maoyan.com/ajax/movieOnInfoList`).
-                then(res=>{
-                    console.log(res.data.movieList);
+        axios.get(API_PROXY+`http://m.maoyan.com/ajax/movieOnInfoList`).
+        then(res=>{
+            console.log(res.data.movieList);
 //            this.movieList = res.data.movieList;
-                    const lista = res.data.movieList;
-                    lista.map(e => {
-                        //map用于对数组遍历
-                        return e.img = e.img.replace('w.h', '128.180');
-                    })
-                    this.movieList = lista;
+            const lista = res.data.movieList;
+            lista.map(e => {
+                //map用于对数组遍历
+                return e.img = e.img.replace('w.h', '128.180');
+            })
+            this.movieList = lista;
 
 //            console.log('lista', lista)
 
 //            let list = res.data.movieList;
-                    if(lista.length<10){
-                        this.isEnd = true;
-                    }
+          if(lista.length<10){
+              this.isEnd = true;
+          }
 //          this.movieList = this.movieList.concat(list);
-                    this.isLoading = false;
-                }).catch(res=>{
-                    alert('failed');
-                })
-            },
-            getDetail(movieId){
-                this.$router.push(`/moviedetail/${movieId}`);
-            }
-        },
-        created(){
-            this.getMovieData();
-        },
-        mounted(){
-            window.onscroll = ()=> {
-                let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-                let clientHeight = document.documentElement.clientHeight;
-                let scrollHeight = document.documentElement.scrollHeight;
+          this.isLoading = false;
+        }).catch(res=>{
+          alert('failed');
+        })
+      },
+      getDetail(movieId){
+          this.$router.push(`/moviedetail/${movieId}`);
+      }
+    },
+    created(){
+      this.getMovieData();
+    },
+    mounted(){
+        window.onscroll = ()=> {
+          let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+          let clientHeight = document.documentElement.clientHeight;
+          let scrollHeight = document.documentElement.scrollHeight;
 //          console.log(scrollTop,clientHeight,scrollHeight);
-                if(scrollTop+clientHeight == scrollHeight && !this.isEnd){
-                    this.isLoading = true;
-                    setTimeout(()=>{
+          if(scrollTop+clientHeight == scrollHeight && !this.isEnd){
+              this.isLoading = true;
+              setTimeout(()=>{
 //                this.getMovieData();
-                        if(this.movieList.length>=12){
-                            this.isLoading = false;
-                            this.isEnd = true;
-                        }
-                    },1000);
-
+                if(this.movieList.length>=12){
+                    this.isLoading = false;
+                    this.isEnd = true;
                 }
-            }
+              },1000);
+
+          }
         }
     }
+  }
 
 </script>
 
