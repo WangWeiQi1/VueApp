@@ -1,9 +1,21 @@
-一个推荐电影、音乐、新闻、段子的app，基本框架用的是vue-cli脚手架，
+# vue_music
 
-api接口是线上的，电影接口是从猫眼官网抓取的，这款APP js功能不是很完善，
+> y
 
-开发的时候主要是为了强化Vue全家桶的使用，音乐播放器方面引用了vue-aplayer插件
+## Build Setup
 
-使用axios请求接口数据 使用vue-router进行路由操作 同时也进行了组件的开发和复用
+``` bash
+# install dependencies
+npm install
 
-使用vuex props进行组件间的传值
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+```
+
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
