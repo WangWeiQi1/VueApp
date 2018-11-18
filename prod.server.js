@@ -1,7 +1,6 @@
 /**
  * Created by Administrator on 2018/11/18/018.
  */
-//用node写一个服务端 打包后预览
 var express = require('express')
 var config = require('./config/index')
 var axios = require('axios')

@@ -8,6 +8,10 @@ import fastclick from 'fastclick'
 import VueLazyLoad from 'vue-lazyload' //vue懒加载插件
 import store from './store'
 
+//在手机端调试工具 vConsole
+import './common/js/vconsole'
+console.log('test')
+
 fastclick.attach(document.body) //解决移动端点击延迟300ms问题
 
 Vue.config.productionTip = false
